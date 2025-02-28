@@ -2,7 +2,7 @@
 
 namespace CS_Basic_Problems
 {
-    internal class Program
+    public class Program
     {
         static void Main(string[] args)
         {
