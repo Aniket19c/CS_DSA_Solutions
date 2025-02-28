@@ -11,10 +11,8 @@ This repository follows a structured branching model:
 - **Feature-specific branches** → Each data structure has its own branch under `dev`:  
   - `arrays` → Contains solutions for array-based problems.  
   - `linked-lists` → Contains solutions for linked list problems.  
-  - `stacks` → Contains solutions for stack-related problems.  
-  - `queues` → Contains queue-based solutions.  
-  - `trees` → Contains solutions for tree-related problems.  
-  - `graphs` → Contains solutions for graph algorithms.  
+  - `strings` → Contains solutions for strings-related problems.  
+  
 
 To switch between branches, use:  
 ```sh
