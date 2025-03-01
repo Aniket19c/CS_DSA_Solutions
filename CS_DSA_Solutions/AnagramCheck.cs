@@ -13,7 +13,30 @@ namespace CS_DSA_Solutions
             if (str1.Length != str2.Length)
                 return false;
 
-            return str1.OrderBy(c => c).SequenceEqual(str2.OrderBy(c => c));
+            Dictionary<char, int> charCount = new Dictionary<char, int>();
+
+            for (int i = 0; i < str1.Length; i++)
+            {
+               
+                if (charCount.ContainsKey(str1[i]))
+                    charCount[str1[i]]++;
+                else
+                    charCount[str1[i]] = 1;
+
+                if (charCount.ContainsKey(str2[i]))
+                    charCount[str2[i]]--;
+                else
+                    charCount[str2[i]] = -1;
+            }
+
+         
+            foreach (var count in charCount.Values)
+            {
+                if (count != 0)
+                    return false;
+            }
+
+            return true;
         }
     }
 }

@@ -10,9 +10,10 @@ namespace CS_DSA_Solutions
     {
         public static string Reverse(string str)
         {
-            char[] charArray = str.ToCharArray();
-            Array.Reverse(charArray);
-            return new string(charArray);
+            StringBuilder reversed = new StringBuilder();
+            for (int i = str.Length - 1; i >= 0; i--)
+                reversed.Append(str[i]);
+            return reversed.ToString();
         }
     }
 }

@@ -8,10 +8,14 @@ namespace CS_DSA_Solutions
 {
     public static class PalindromeCheck
     {
-        public static bool IsPalindrome(string str)
+        public static bool IsPalindrome(string s)
         {
-            string reversed = ReverseString.Reverse(str);
-            return str.Equals(reversed, StringComparison.OrdinalIgnoreCase);
+            string k = "";
+            for (int i = s.Length - 1; i >= 0; i--)
+            {
+                k += s[i];
+            }
+            return s.Equals(k);
         }
     }
 }
