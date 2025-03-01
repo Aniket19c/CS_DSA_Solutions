@@ -21,7 +21,7 @@ namespace CS_DSA_Solutions
                 temp = temp.Next;
 
             temp.Next = newNode;
-            newNode.Next = head;   
+            newNode.Next = head;
         }
 
         public void Delete(int data)
@@ -53,8 +53,9 @@ namespace CS_DSA_Solutions
                 temp = temp.Next;
             } while (temp != head && temp.Data != data);
 
-            if (temp.Data == data)
-                prev.Next = temp.Next;
+            if (temp == head) return;
+
+            prev.Next = temp.Next;
         }
 
         public void Display()
@@ -67,7 +68,8 @@ namespace CS_DSA_Solutions
                 Console.Write(temp.Data + "->");
                 temp = temp.Next;
             } while (temp != head);
-            Console.WriteLine($"{head.data}");
+            Console.WriteLine($"{head.Data}");
         }
     }
+
 }

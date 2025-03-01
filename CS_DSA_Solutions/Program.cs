@@ -50,6 +50,8 @@ namespace CS_DSA_Solutions
                 Console.WriteLine("1. Insert at End");
                 Console.WriteLine("2. Delete a Value");
                 Console.WriteLine("3. Display List");
+                Console.WriteLine("4. Add at particular index");
+                Console.WriteLine("5. Remove from index");
                 Console.WriteLine("0. Back ");
                 
 
@@ -80,6 +82,23 @@ namespace CS_DSA_Solutions
                         break;
                     case 3:
                         dll.Display();
+                        break;
+                    case 4:
+                        Console.WriteLine("Enter the index where you want to add");
+                        int ind;
+                        if (int.TryParse(Console.ReadLine(), out ind)) 
+                        Console.WriteLine("Enter the data you want to add");
+                        int data;
+                        if(int.TryParse(Console.ReadLine(), out data));
+                        dll.InsertAt(ind, data);
+                        break;
+                    case 5:
+                        Console.WriteLine("Enter the index you want to delete");
+                        int rInd;
+                        if (int.TryParse(Console.ReadLine(), out rInd))
+                            dll.RemoveAt(rInd);
+                        else
+                            Console.WriteLine("Invalid Input");
                         break;
                     case 0:
                         return;
@@ -129,6 +148,7 @@ namespace CS_DSA_Solutions
                     case 3:
                         cll.Display();
                         break;
+
                     case 0:
                         return;
                     default:
