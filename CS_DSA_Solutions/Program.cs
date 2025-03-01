@@ -46,7 +46,7 @@ namespace CS_DSA_Solutions
         {
             while (true)
             {
-                Console.WriteLine("\nDoubly Linked List Operations:");
+            
                 Console.WriteLine("1. Insert at End");
                 Console.WriteLine("2. Delete a Value");
                 Console.WriteLine("3. Display List");
@@ -95,7 +95,7 @@ namespace CS_DSA_Solutions
             while (true)
             {
               
-                Console.WriteLine("1. Insert at End");
+                Console.WriteLine("1. Insert");
                 Console.WriteLine("2. Delete a Value");
                 Console.WriteLine("3. Display List");
                 Console.WriteLine("0. Back");
