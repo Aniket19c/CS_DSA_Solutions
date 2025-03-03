@@ -1,4 +1,5 @@
 using System;
+using CS_DSA_Solutions.Student;
 
 namespace CS_DSA_Solutions
 {
@@ -10,6 +11,8 @@ namespace CS_DSA_Solutions
             CircularLinkedList cll = new CircularLinkedList();
             SinglyLinkedList sll= new SinglyLinkedList();
 
+            StudentManager studentManager = new StudentManager();
+
 
             while (true)
             {
@@ -17,6 +20,7 @@ namespace CS_DSA_Solutions
                 Console.WriteLine("1. Doubly Linked List");
                 Console.WriteLine("2. Circular Linked List");
                 Console.WriteLine("3. Singly Linked List");
+                Console.WriteLine("4. Student Management");
                 Console.WriteLine("0. Exit");
                
 
@@ -38,7 +42,10 @@ namespace CS_DSA_Solutions
                     case 3:
                         SinglyLinkedListMenu(sll);
                         break;
-                        
+                    case 4:
+                        StudentMenu(studentManager);
+                        break;
+
                     case 0:
                         Console.WriteLine("Exiting program...");
                         return;
@@ -182,6 +189,62 @@ namespace CS_DSA_Solutions
                 }
             }
         }
+        static void StudentMenu(StudentManager studentManager)
+        {
+            while (true)
+            {
+                Console.WriteLine("1. Add Student");
+                Console.WriteLine("2. Remove Student");
+                Console.WriteLine("3. Display Students");
+                Console.WriteLine("0. Back");
+
+                if (!int.TryParse(Console.ReadLine(), out int choice))
+                {
+                    Console.WriteLine("Invalid input. Try again.");
+                    continue;
+                }
+
+                switch (choice)
+                {
+                    case 1:
+                        Console.Write("Enter student name: ");
+                        string name = Console.ReadLine();
+                        Console.Write("Enter student ID: ");
+                        if (int.TryParse(Console.ReadLine(), out int id))
+                        {
+                            //studentManager.AddStudent(new Student(id, name));
+                            studentManager.AddStudent(new CS_DSA_Solutions.Student.Student(id, name));
+
+                        }
+                        else
+                        {
+                            Console.WriteLine("Invalid ID format.");
+                        }
+                        break;
+                    case 2:
+                        Console.Write("Enter student ID to remove: ");
+                        if (int.TryParse(Console.ReadLine(), out int removeId))
+                        {
+                            studentManager.RemoveStudent(removeId);
+                        }
+                        else
+                        {
+                            Console.WriteLine("Invalid ID format.");
+                        }
+                        break;
+                    case 3:
+                        studentManager.DisplayStudents();
+                        break;
+                    case 0:
+                        return;
+                    default:
+                        Console.WriteLine("Invalid choice. Try again.");
+                        break;
+                }
+            }
+        }
+        
+
 
         static void CircularLinkedListMenu(CircularLinkedList cll)
         {
