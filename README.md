@@ -12,7 +12,7 @@ This repository follows a structured branching model:
   - `Arrays` → Contains solutions for array-based problems.  
   - `Linked-lists` → Contains solutions for linked list problems.  
 	 -`Student-Manager` → Implements linked list operations for managing students.
-	 -`College__Management__System` → Implements linked list operations for managing College students with department name .
+	 -`College_Management_System` → Implements linked list operations for managing College students with department name .
   - `Strings` → Contains solutions for string-related problems.  
   - `Stack-Queue` → Contains solutions for stack-related problems.
 
