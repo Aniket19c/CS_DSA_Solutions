@@ -11,7 +11,8 @@ This repository follows a structured branching model:
 - **Feature-specific branches** → Each data structure has its own branch under `dev`:  
   - `Arrays` → Contains solutions for array-based problems.  
   - `Linked-lists` → Contains solutions for linked list problems.  
-  - `Strings` → Contains solutions for stack-related problems.  
+  - `Strings` → Contains solutions for strings-related problems.  
+  - `Stack-Queues`  →Contains solutions for Stack_Queue related problems
  
 
 To switch between branches, use:  
