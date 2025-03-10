@@ -8,7 +8,8 @@ class Program
         Console.WriteLine("Choose a data structure:");
         Console.WriteLine("1. Dictionary");
         Console.WriteLine("2. HashTable");
-        Console.Write("Enter your choice (1 or 2): ");
+        Console.WriteLine("3. Employees");
+        Console.Write("Enter your choice ");
         int choice = int.Parse(Console.ReadLine());
 
         if (choice == 1)
@@ -21,10 +22,64 @@ class Program
             HashTable<int, string> myHashTable = new HashTable<int, string>();
             HandleHashTable(myHashTable);
         }
+        else if (choice == 3)
+        {
+            Dictionary<int, string> employees = new Dictionary<int, string>();
+            employees.Add(101, "Alice");
+            employees.Add(102, "Bob");
+            employees.Add(103, "Charlie");
+
+            if (employees.TryGetValue(102, out string empName))
+            {
+                Console.WriteLine($"Employee 102: {empName}");
+            }
+
+            Console.WriteLine($"Contains Employee ID 104? {employees.ContainsKey(104)}");
+            Console.WriteLine($"Contains Employee 'Charlie'? {employees.ContainsValue("Charlie")}");
+
+          
+            employees.Remove(101);
+            Console.WriteLine("Employee 101 removed.");
+
+           
+            Console.WriteLine("\nEmployee List:");
+            foreach (var key in employees.Keys)
+            {
+                Console.WriteLine($"ID: {key}, Name: {employees[key]}");
+            }
+
+            employees[103] = "Carlos";  
+
+            Console.WriteLine($"Total Employees: {employees.Count}");
+
+         
+            employees.Clear();
+            Console.WriteLine("Dictionary Cleared!\n");
+
+            // Word Frequency Counter
+            string sentence = "apple banana apple grape banana apple";
+            Dictionary<string, int> wordCount = new Dictionary<string, int>();
+
+            string[] words = sentence.Split(' ');
+            foreach (var word in words)
+            {
+                if (wordCount.ContainsKey(word))
+                    wordCount[word]++;
+                else
+                    wordCount[word] = 1;
+            }
+
+            Console.WriteLine("Word Frequency Count:");
+            foreach (var item in wordCount)
+            {
+                Console.WriteLine($"{item.Key}: {item.Value}");
+            }
+        }
         else
         {
             Console.WriteLine("Invalid choice!");
         }
+        Console.ReadKey();
     }
 
     static void HandleDictionary(Dictionary<int, string> dict)
